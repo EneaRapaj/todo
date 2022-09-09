@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <string name="selected_item">Selected item:</string>
+
+    <string-array name="Languages">
+        <item>wake up</item>
+        <item>wash</item>
+        <item>go the activity</item>
+        <item>eat launch</item>
+        <item>eat dinner</item>
+        <item>create meal</item>
+    </string-array>
+
+</resources>
