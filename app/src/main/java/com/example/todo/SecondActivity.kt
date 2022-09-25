@@ -11,14 +11,12 @@ import kotlinx.android.synthetic.main.activity_second.view.*
 import java.util.*
 
 
-class SecondActivity : AppCompatActivity() {  // AdapterView.OnItemSelectedListener
-
+class SecondActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-System.out.println("shkruaj dicka")
 
         // access the items of the list
         val languages = resources.getStringArray(R.array.Languages)
@@ -29,7 +27,6 @@ System.out.println("shkruaj dicka")
                 						android.R.layout.simple_spinner_item,
                                         languages)
             spinner.adapter = adapter
-
             spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View,
@@ -52,12 +49,10 @@ System.out.println("shkruaj dicka")
 
     fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.findViewById<Button>(R.id.imageView).setOnClickListener {
-            println("Butoni klikua1")
             getSet(view);
         }
 
         view.findViewById<Button>(R.id.buttonmbrapa).setOnClickListener {
-            println("Butoni klikua")
             goPreviusPage(view);
         }
     }
@@ -68,7 +63,7 @@ System.out.println("shkruaj dicka")
         var db = helper.readableDatabase
         val editTxt = findViewById<Spinner>(R.id.spinner);
 
-      val msg = editTxt.getSelectedItem().toString();
+        val msg = editTxt.getSelectedItem().toString();
         val editTxt1 = findViewById<EditText>(R.id.hour);
         val msg1 = editTxt1.text.toString();
         val editTxt2 = findViewById<EditText>(R.id.minute);
@@ -91,7 +86,7 @@ System.out.println("shkruaj dicka")
             return;
         }
 
-        var query = "Select count( Rregulli_rradhes ) from AKTIVITETES where ora = " + msg1 + " AND minutat = " + msg2 + " ;";
+        var query = "Select count( Rregulli_rradhes ) from AKTIVITETES where ora = " + msg1 + " AND Minutat = " + msg2 + " ;";
         var cursor = db.rawQuery(query, null);
         cursor.moveToFirst();
         if ( cursor.getString(0 ).toInt()  >= 1 ) {
@@ -101,23 +96,18 @@ System.out.println("shkruaj dicka")
         cursor.close();
         var cv = ContentValues();
         var date = Calendar.getInstance();
-        date.add( Calendar.DATE, 1 );
+        //date.add( Calendar.DATE, 1 );
         var strDate = "";
         strDate = strDate + date.get( Calendar.DAY_OF_MONTH );
         strDate = strDate + "/";
         strDate = strDate + date.get( Calendar.MONTH );
         strDate = strDate + "/";
         strDate = strDate + date.get( Calendar.YEAR );
-       cv.put("Rregulli_rradhes",msg );
+        cv.put("Rregulli_rradhes",msg );
         cv.put("Data", strDate );
         cv.put("Ora", msg1.toInt() );
         cv.put("Minutat", msg2.toInt() );
         db.insert("AKTIVITETES", null, cv);
-
-//            insert into USERS( UNAME, PWD ) values ( "username", "my-password" );
-//        val txtview = findViewById<TextView>(R.id.text).apply {
-//              text = ms
-//         }
     }
 
     fun goPreviusPage( view : View){
@@ -125,4 +115,4 @@ System.out.println("shkruaj dicka")
         startActivity(intent);
     }
 
-    }
+}

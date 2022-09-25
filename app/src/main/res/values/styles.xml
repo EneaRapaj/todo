@@ -11,12 +11,12 @@
     <string name="selected_item">Selected item:</string>
 
     <string-array name="Languages">
-        <item>wake up</item>
-        <item>wash</item>
-        <item>go the activity</item>
-        <item>eat launch</item>
-        <item>eat dinner</item>
-        <item>create meal</item>
+        <item>Zgjohu nga krevati</item>
+        <item>Lahu</item>
+        <item>Ha mengjes</item>
+        <item>Shko shkolle</item>
+        <item>Meso</item>
+        <item>Shko ne sport</item>
     </string-array>
 
 </resources>
