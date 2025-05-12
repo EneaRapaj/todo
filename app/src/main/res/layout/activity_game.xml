@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/parquet_background">
+    <!-- XML for activity_game.xml -->
+
+    <TextView
+        android:id="@+id/coinsText"
+        android:layout_width="284dp"
+        android:layout_height="94dp"
+        android:layout_below="@id/hitsText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="64dp"
+        android:text="Coins: 0"
+        android:textSize="80px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/rabbit"
+        android:layout_width="127dp"
+        android:layout_height="196dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/grammblin"
+        app:layout_constraintBottom_toTopOf="@+id/coinsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="283dp"
+        android:layout_height="133dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/hitsText"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/heart1"
+            android:layout_width="91dp"
+            android:layout_height="118dp"
+            android:src="@drawable/red_heart"
+            tools:layout_editor_absoluteX="138dp"
+            tools:layout_editor_absoluteY="381dp" />
+
+        <ImageView
+            android:id="@+id/heart3"
+            android:layout_width="94dp"
+            android:layout_height="121dp"
+            android:src="@drawable/red_heart"
+            tools:layout_editor_absoluteX="273dp"
+            tools:layout_editor_absoluteY="98dp" />
+
+        <ImageView
+            android:id="@+id/heart2"
+            android:layout_width="94dp"
+            android:layout_height="108dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/red_heart"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="124dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hitsText"
+        android:layout_width="99dp"
+        android:layout_height="85dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Hits: 8"
+        android:textSize="90px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
