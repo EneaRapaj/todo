@@ -1,29 +1,47 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
-    ext.kotlin_version = '1.3.61'
+    ext {
+        // Define the versions for the Android Gradle Plugin and Kotlin
+        agp_version = '8.7.1'  // AGP version
+        kotlin_version = '1.8.10'  // Kotlin version
+    }
     repositories {
         google()
-        jcenter()
-        
+        mavenCentral()  // jcenter is deprecated, so use mavenCentral
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.6.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath "com.android.tools.build:gradle:$agp_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"  // Kotlin plugin
     }
 }
+
+
 
 allprojects {
     repositories {
         google()
-        jcenter()
-        
+        mavenCentral()  // jcenter is deprecated
+
+
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
+}
+
+subprojects {
+    afterEvaluate { project ->
+        // Ensure Kotlin JVM target is set to 17 in all subprojects
+        project.tasks.withType(KotlinCompile).configureEach {
+            kotlinOptions.jvmTarget = "17"  // Set Kotlin to target JVM 17
+        }
+
+        // Ensure Java compatibility is set to Java 17 in all subprojects
+        project.tasks.withType(JavaCompile).configureEach {
+            sourceCompatibility = '17'  // Set Java source compatibility to 17
+            targetCompatibility = '17'  // Set Java target compatibility to 17
+        }
+    }
 }

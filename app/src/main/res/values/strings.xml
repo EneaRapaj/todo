@@ -2,4 +2,17 @@
     <string name="app_name">todo</string>
     <string name="select">Select Item</string>
     <string name="inserte">Vendos</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string name="hint_minute">minutat</string>
+    <string name="hint_ora">ora</string>
+
+    <string-array name="Languages">
+        <item>Zgjohu nga krevati</item>
+        <item>Lahu</item>
+        <item>Ha mengjes</item>
+        <item>Shko shkolle</item>
+        <item>Meso</item>
+        <item>Shko ne sport</item>
+    </string-array>
 </resources>

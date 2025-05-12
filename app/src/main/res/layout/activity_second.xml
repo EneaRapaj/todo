@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/vajze"
-    tools:context=".SecondActivity"
-    >
-
-    <!--    <EditText-->
-    <!--        android:id="@+id/editText"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginBottom="452dp"-->
-
-    <!--        android:ems="10"-->
-    <!--        android:inputType="textPersonName"-->
-    <!--        android:text="Rregulli rradhes"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.562"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/spinner"-->
-    <!--        app:layout_constraintVertical_bias="0.893" />-->
+    tools:context=".SecondActivity">
 
     <Button
         android:id="@+id/imageView"
@@ -35,42 +18,38 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.718" />
+        app:layout_constraintVertical_bias="0.755" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="122dp"
         android:layout_height="45dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="monospace"
         android:shadowColor="@android:color/background_dark"
         android:text="Vendos oren me nr. nga 06-23"
         android:textColor="#0E0A0A"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="101dp"
         android:layout_height="42dp"
         android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
         android:layout_marginTop="36dp"
         android:text="Vendos min. dy shifra 00-59"
         android:textColor="#0E0A0A"
         app:layout_constraintBottom_toTopOf="@+id/minute"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.383"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:layout_constraintVertical_bias="0.182"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UnknownId" />
 
     <EditText
@@ -78,34 +57,34 @@
         android:layout_width="93dp"
         android:layout_height="51dp"
         android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="ora"
+        android:hint="@string/hint_ora"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.0" />
+        android:autofillHints="time"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/minute"
         android:layout_width="102dp"
         android:layout_height="48dp"
         android:layout_marginEnd="72dp"
-        android:layout_marginRight="72dp"
-        android:layout_marginBottom="4dp"
         android:ems="10"
-        android:hint="minutat"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="@string/hint_minute"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toEndOf="@+id/hour"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.237"
+        app:layout_constraintVertical_bias="0.426"
+        android:autofillHints="time"
         tools:ignore="UnknownId" />
 
     <ImageButton
@@ -113,44 +92,41 @@
         android:layout_width="60dp"
         android:layout_height="48dp"
         android:contentDescription="@string/app_name"
-        android:onClick="goPreviusPage"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        android:onClick="goPreviousPage"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.014"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="?attr/homeAsUpIndicator" />
 
     <TextView
         android:id="@+id/text"
         android:layout_width="85dp"
         android:layout_height="27dp"
-        android:layout_marginTop="88dp"
         android:fontFamily="monospace"
         android:text="Intenerari"
         android:textColor="#151111"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="368dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="516dp"
+        android:layout_marginBottom="200dp"
         android:contentDescription="@string/select"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.198" />
 
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

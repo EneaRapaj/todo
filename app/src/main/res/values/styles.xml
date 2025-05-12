@@ -8,15 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <string name="selected_item">Selected item:</string>
 
-    <string-array name="Languages">
-        <item>Zgjohu nga krevati</item>
-        <item>Lahu</item>
-        <item>Ha mengjes</item>
-        <item>Shko shkolle</item>
-        <item>Meso</item>
-        <item>Shko ne sport</item>
-    </string-array>
 
 </resources>
